@@ -239,20 +239,6 @@ python main.py
 
 ---
 
-# Melhorias Futuras
-
-- Sistema de recomendação colaborativa
-- Similaridade entre usuários
-- Cache com Redis
-- Processamento distribuído com Celery
-- Dashboard com métricas
-- Integração com RabbitMQ
-- Deploy em Kubernetes
-- Recomendação em tempo real
-- Monitoramento com Prometheus e Grafana
-
----
-
 # Conceitos Aplicados
 
 ## Concorrência

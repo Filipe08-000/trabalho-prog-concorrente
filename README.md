@@ -60,6 +60,7 @@ O dataset contém:
 
 Fonte oficial:
 
+https://www.kaggle.com/datasets/amirmotefaker/movielens-10m-dataset-latest-version
 https://grouplens.org/datasets/movielens/10m/
 
 ---

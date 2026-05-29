@@ -1,7 +1,7 @@
 # trabalho-prog-concorrente
 Trabalho de duplas para a matéria de programação concorrente distribuída.  
 
-# Sistema Paralelo de Processamento de Avaliações de Filmes com MovieLens 10M
+# Sistema Paralelo de Processamento de Avaliações de Filmes com MovieLens 10.5 M
 
 ## Disciplina
 
@@ -20,7 +20,7 @@ Rafael Marconi
 
 # Descrição
 
-Este projeto utiliza o dataset MovieLens 10M para processar milhões de avaliações de filmes em paralelo, gerando rankings automáticos por categoria.
+Este projeto utiliza o dataset MovieLens 10.5 M para processar milhões de avaliações de filmes em paralelo, gerando rankings automáticos por categoria.
 
 O foco principal do sistema é demonstrar conceitos de:
 
@@ -31,13 +31,13 @@ O foco principal do sistema é demonstrar conceitos de:
 - escalabilidade
 - processamento de grandes volumes de dados
 
-O sistema processa mais de 10 milhões de avaliações utilizando múltiplos workers, reduzindo significativamente o tempo de execução em comparação com o processamento serial.
+O sistema processa mais de 10.5 milhões de avaliações utilizando múltiplos workers, reduzindo significativamente o tempo de execução em comparação com o processamento serial.
 
 ---
 
 # Objetivos
 
-- Processar mais de 10 milhões de avaliações de filmes
+- Processar mais de 10.5 milhões de avaliações de filmes
 - Gerar Top 10 filmes por categoria
 - Calcular médias de avaliações
 - Identificar filmes mais populares
@@ -49,11 +49,11 @@ O sistema processa mais de 10 milhões de avaliações utilizando múltiplos wor
 
 # Dataset
 
-Foi utilizado o dataset MovieLens 10M, disponibilizado pelo GroupLens Research.
+Foi utilizado o dataset MovieLens 10.5 M, disponibilizado pelo GroupLens Research.
 
 O dataset contém:
 
-- 10 milhões de avaliações
+- 10.5 milhões de avaliações
 - aproximadamente 10 mil filmes
 - milhares de usuários
 - informações de gêneros e timestamps

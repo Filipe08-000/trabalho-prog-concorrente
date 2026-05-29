@@ -38,7 +38,6 @@ O sistema processa mais de 10.5 milhões de avaliações utilizando múltiplos w
 # Objetivos
 
 - Processar mais de 10.5 milhões de avaliações de filmes
-- Gerar Top 10 filmes por categoria
 - Calcular médias de avaliações
 - Identificar filmes mais populares
 - Executar processamento paralelo utilizando múltiplos workers
@@ -75,13 +74,6 @@ https://grouplens.org/datasets/movielens/tag-genome-2021/
 ## Processamento Paralelo
 
 O sistema divide o processamento em múltiplos workers para acelerar os cálculos.
-
-Exemplo:
-
-- Worker 1 → Ação
-- Worker 2 → Comédia
-- Worker 3 → Drama
-- Worker 4 → Ficção Científica
 
 Cada worker processa:
 
@@ -141,14 +133,6 @@ project/
 
 # Algoritmo Utilizado
 
-Para cada categoria de filme:
-
-1. Coletar filmes do gênero
-2. Agrupar avaliações
-3. Calcular média das notas
-4. Ordenar filmes por score
-5. Retornar Top 10
-
 ---
 
 # Processamento Paralelo
@@ -157,7 +141,6 @@ O sistema utiliza múltiplos processos para distribuir a carga de trabalho.
 
 Estratégia utilizada:
 
-- divisão por gênero
 - processamento em paralelo
 - agregação final dos resultados
 
@@ -198,8 +181,6 @@ O sistema foi projetado para suportar grandes volumes de dados através de:
 ---
 
 # Exemplo de Resultado
-
-## Top 10 Ficção Científica
 
 | Ranking | Filme | Nota Média |
 |---|---|---|

@@ -98,13 +98,10 @@ Fila de Processamento
 # Tecnologias Utilizadas
  
 - Python
-- Pandas
-- PostgreSQL
 - FastAPI
 - multiprocessing
 - concurrent.futures
-- Docker
-- Docker Compose
+  
 ---
  
 # Estrutura do Projeto

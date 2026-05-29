@@ -68,11 +68,10 @@ https://grouplens.org/datasets/movielens/tag-genome-2021/
 
 ## Rankings
 
+- Top 10 filmes de todos listados
 - Top 10 filmes por gênero
-- Top 10 filmes globais
 - Filmes mais avaliados
 - Filmes com melhor média
-- Usuários mais ativos
 
 ## Processamento Paralelo
 

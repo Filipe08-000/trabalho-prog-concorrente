@@ -246,9 +246,9 @@ python main.py
  
 | Modo | Tempo |
 |---|---|
-| Serial | 70.35s |
+| Serial | 108.22s |
 | Paralelo (12 workers) | 25.94s |
-| **Speedup** | **2.71x mais rápido** |
+| **Speedup** | **4.17x mais rápido** |
  
 O processamento paralelo com 12 workers reduziu o tempo de execução de **70.35 segundos** para **25.94 segundos**, atingindo um speedup de **2.71x** em relação ao modo serial.
  

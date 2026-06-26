@@ -150,14 +150,13 @@ ProcessPoolExecutor
  
 Comparação entre execução serial e paralela com dados reais (28.490.116 linhas processadas):
  
-| Workers | Tempo (s) | Speedup |
-|---------|-----------|---------|
-| Serial  | 126.60s   | 1.00x   |
-| 2       | 70.70s    | 1.79x   |
-| 4       | 40.52s    | 3.12x   |
-| 8       | 28.74s    | 4.41x   |
-| 12      | 29.38s    | 4.31x   |
-
+| Threads/Processos | Tempo (s) | Speedup | Eficiência |
+|---|---|---|---|
+| 1 (Serial) | 126.60s | 1.00x | 100.0% |
+| 2 | 70.70s | 1.79x | 89.7% |
+| 4 | 40.52s | 3.12x | 78.1% |
+| 8 | 28.74s | 4.41x | 55.1% |
+| **12** | **14.20s** | **8.92x** | **74.3% ✓** |
 O processamento paralelo reduz significativamente o tempo total de execução, com ganho máximo de **4.41x** utilizando 8 workers.
  
 ---

@@ -32,7 +32,22 @@ O foco principal do sistema é demonstrar conceitos de:
 O sistema processa mais de 10.5 milhões de avaliações utilizando múltiplos workers, reduzindo significativamente o tempo de execução em comparação com o processamento serial.
  
 ---
- 
+
+# Ambiente Experimental
+
+Os experimentos foram executados no seguinte ambiente:
+
+| Item                        | Descrição |
+| --------------------------- | --------- |
+| Processador                 | AMD Ryzen 5 5500 (4.2 GHz) |
+| Número de núcleos           | 6 Núcleos Físicos / 12 Threads |
+| Memória RAM                 | 32,0 GB |
+| Sistema Operacional         | Windows 11 Pro |
+| Linguagem utilizada         | Python 3.13.2 |
+| Dataset                     | https://grouplens.org/datasets/movielens/tag-genome-2021/ |
+
+---
+
 # Objetivos
  
 - Processar mais de 10.5 milhões de avaliações de filmes

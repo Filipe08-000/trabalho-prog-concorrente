@@ -157,8 +157,7 @@ Comparação entre execução serial e paralela com dados reais (28.490.116 linh
 | 4 | 40.52s | 3.12x | 78.1% |
 | 8 | 28.74s | 4.41x | 55.1% |
 | **12** | **14.20s** | **8.92x** | **74.3% ✓** |
-O processamento paralelo reduz significativamente o tempo total de execução, com ganho máximo de **4.41x** utilizando 8 workers.
- 
+
 ---
  
 # Escalabilidade

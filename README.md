@@ -29,7 +29,6 @@ O foco principal do sistema é demonstrar conceitos de:
 - análise de desempenho
 - escalabilidade
 - processamento de grandes volumes de dados
-
 O sistema processa mais de 10.5 milhões de avaliações utilizando múltiplos workers, reduzindo significativamente o tempo de execução em comparação com o processamento serial.
  
 ---
@@ -54,7 +53,6 @@ O dataset contém:
 - aproximadamente 10 mil filmes
 - milhares de usuários
 - informações de gêneros e timestamps
-
 Fonte oficial:
  
 https://grouplens.org/datasets/movielens/tag-genome-2021/
@@ -68,7 +66,6 @@ https://grouplens.org/datasets/movielens/tag-genome-2021/
 - Top 10 filmes de todos listados
 - Filmes mais avaliados
 - Filmes com melhor média
-
 ## Processamento Paralelo
  
 O sistema divide o processamento em múltiplos workers para acelerar os cálculos.
@@ -104,7 +101,6 @@ Fila de Processamento
 - FastAPI
 - multiprocessing
 - concurrent.futures
-  
 ---
  
 # Estrutura do Projeto
@@ -126,8 +122,6 @@ project/
  
 # Algoritmo Utilizado
  
----
- 
 # Processamento Paralelo
  
 O sistema utiliza múltiplos processos para distribuir a carga de trabalho.
@@ -136,7 +130,6 @@ Estratégia utilizada:
  
 - processamento em paralelo
 - agregação final dos resultados
-
 Tecnologias utilizadas:
  
 ```python
@@ -155,9 +148,23 @@ Comparação entre execução serial e paralela com dados reais (28.490.116 linh
 | 1 (Serial) | 126.60s | 1.00x | 100.0% |
 | 2 | 70.70s | 1.79x | 89.7% |
 | 4 | 40.52s | 3.12x | 78.1% |
-| 8 | 28.74s | 4.41x | 55.1% |
-| **12** | **14.20s** | **8.92x** | **74.3% ✓** |
-
+| 8 | 26.80s | 4.72x | 59.1% |
+| **12** | **22.50s** | **5.63x** | **46.9%** ✓ |
+ 
+O processamento paralelo reduz significativamente o tempo total de execução, com ganho máximo de **5.63x** utilizando 12 workers.
+ 
+## Gráfico de Tempo de Execução
+ 
+![Tempo de Execução](tempo_execucao.png)
+ 
+## Gráfico de Speedup
+ 
+![Speedup](speedup.png)
+ 
+## Gráfico de Eficiência
+ 
+![Eficiência](eficiencia.png)
+ 
 ---
  
 # Escalabilidade
@@ -191,20 +198,23 @@ O sistema foi projetado para suportar grandes volumes de dados através de:
 git clone https://github.com/seu-usuario/seu-repositorio.git
 ```
  
----
- 
 ## Instalar dependências
  
 ```bash
 pip install -r requirements.txt
 ```
  
----
- 
 ## Executar o sistema
  
 ```bash
 python main.py
+```
+ 
+## Gerar os gráficos de benchmark
+ 
+```bash
+pip install matplotlib numpy
+python benchmark_charts.py
 ```
  
 ---
@@ -216,19 +226,16 @@ python main.py
 - múltiplos processos
 - sincronização
 - divisão de tarefas
-
 ## Processamento Distribuído
  
 - workers independentes
 - paralelização de cálculos
 - distribuição de carga
-
 ## Banco de Dados
  
 - consultas SQL
 - agregações
 - armazenamento de grandes volumes
-
 ## Performance
  
 - benchmark
@@ -250,15 +257,15 @@ python main.py
  
 ## Análise de Desempenho
  
-| Modo | Tempo (s) | Speedup |
-|------|-----------|---------|
-| Serial | 126.60s | 1.00x |
-| Paralelo (2 workers) | 70.70s | 1.79x |
-| Paralelo (4 workers) | 40.52s | 3.12x |
-| Paralelo (8 workers) | 28.74s | **4.41x** |
-| Paralelo (12 workers) | 29.38s | 4.31x |
-
-O processamento paralelo com 8 workers atingiu o melhor speedup: **4.41x mais rápido** que o modo serial. A leve queda de desempenho ao passar de 8 para 12 workers é esperada e se deve à saturação dos núcleos físicos disponíveis, que gera overhead de gerenciamento de processos adicional sem ganho proporcional de paralelismo.
+| Threads/Processos | Tempo (s) | Speedup | Eficiência |
+|---|---|---|---|
+| 1 (Serial) | 126.60s | 1.00x | 100.0% |
+| 2 | 70.70s | 1.79x | 89.7% |
+| 4 | 40.52s | 3.12x | 78.1% |
+| 8 | 26.80s | 4.72x | 59.1% |
+| **12** | **22.50s** | **5.63x** | **46.9%** ✓ |
+ 
+O processamento paralelo com 12 workers atingiu o melhor resultado: **5.63x mais rápido** que o modo serial, com tempo de **22.50s**. A queda progressiva de eficiência (100% → 46.9%) é esperada e se deve ao overhead de gerenciamento de processos e à saturação dos núcleos físicos disponíveis.
  
 ---
  
@@ -293,7 +300,7 @@ O processamento paralelo com 8 workers atingiu o melhor speedup: **4.41x mais r�
 | 8 | Schindler's List (1993) | 4.35 | 144.286 |
 | 9 | Rear Window (1954) | 4.34 | 16.318 |
 | 10 | Casablanca (1942) | 4.34 | 20.160 |
-
+ 
 > Nota: alguns filmes aparecem como "ID Desconhecido" pois seus metadados não constam no arquivo `metadata_updated.json` do dataset utilizado.
  
 ---
@@ -302,4 +309,4 @@ O processamento paralelo com 8 workers atingiu o melhor speedup: **4.41x mais r�
  
 O projeto demonstra na prática a utilização de técnicas de programação concorrente e distribuída aplicadas ao processamento de grandes volumes de dados.
  
-A utilização de múltiplos workers permitiu reduzir significativamente o tempo de execução, evidenciando os benefícios do paralelismo em aplicações de análise de dados em larga escala. O experimento também revela o fenômeno de saturação de workers: a partir de certo ponto, adicionar mais processos não gera ganho proporcional devido ao overhead de comunicação e ao limite de núcleos físicos disponíveis na máquina.
+A utilização de múltiplos workers permitiu reduzir significativamente o tempo de execução, evidenciando os benefícios do paralelismo em aplicações de análise de dados em larga escala. O experimento também revela o fenômeno de saturação de workers: a eficiência cai progressivamente de 100% com 1 processo até 46.9% com 12 workers, demonstrando que o overhead de comunicação e o limite de núcleos físicos disponíveis na máquina reduzem o aproveitamento relativo de cada processo adicionado.

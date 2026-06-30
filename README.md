@@ -173,7 +173,7 @@ O processamento paralelo reduz significativamente o tempo total de execução, c
 ![Tempo de Execução](tempo_execucao.png)
  
 ## Gráfico de Speedup
- 
+
 ![Speedup](speedup.png)
  
 ## Gráfico de Eficiência
